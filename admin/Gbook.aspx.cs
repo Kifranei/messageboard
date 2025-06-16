@@ -11,7 +11,12 @@ namespace messageboard.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["admin"] == null)
+            {
+                Response.Write("<script>alert('请先登录管理员账号！');window.location='login.aspx';</script>");
+                Response.End();
+                return;
+            }
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {

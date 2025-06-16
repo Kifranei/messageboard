@@ -16,7 +16,8 @@ namespace messageboard
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Gbook.aspx?cid=" + DropDownList1.Text);
+            // 跳转到seebook.aspx时只传分组id，不传用户id
+            Response.Redirect("seebook.aspx?cid=" + DropDownList1.SelectedValue);
         }
     }
 }

@@ -14,19 +14,40 @@ namespace messageboard
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string uid = Request.QueryString["uid"];
+            string name = Request.QueryString["name"];
+            if (string.IsNullOrEmpty(uid) || string.IsNullOrEmpty(name))
+            {
+                Label1.Visible = false;
+                Label2.Visible = false;
+                Label5.Visible = false;
+            }
+            else
+            {
+                Label1.Text = "你好" + "<a href='" + "personal.aspx?uid=" + uid + "'>" + name + "</a >";
+                Label2.Text = "<a href='"+"Gbook.aspx?uid=" + uid + "'>留言</a >";
+                Label5.Text = "<a href='" + "logout.aspx'>注销</a>";
+            }
             if (!IsPostBack)
             {
                 this.Label3.Text = "1";
                 bind();
             }
-            Label1.Text = "你好" + "<a href='" + "personal.aspx?uid=" + Request.QueryString["uid"] + "'>" + Request.QueryString["name"] + "</a >";
-            Label2.Text = "<a href='"+"Gbook.aspx?uid=" + Request.QueryString["uid"] + "'>留言</a >";
-            Label5.Text = "<a href='" + "logout.aspx'>注销</a>";
         }
 
         public void bind()
         {
-            string strSql = "select gbook.* from gbook, register where register.id = gbook.userid order by gbook.id desc";
+            // 只按分组显示所有留言，不按用户过滤
+            string classid = Request.QueryString["cid"];
+            string strSql;
+            if (!string.IsNullOrEmpty(classid))
+            {
+                strSql = "select gbook.* from gbook, register where register.id = gbook.userid and gbook.classid = " + classid + " order by gbook.id desc";
+            }
+            else
+            {
+                strSql = "select gbook.* from gbook, register where register.id = gbook.userid order by gbook.id desc";
+            }
             DataTable dt = db1.GetRecords(strSql);
             int curpage = Convert.ToInt32(this.Label3.Text);
             PagedDataSource pds = new PagedDataSource(); //使用分页类

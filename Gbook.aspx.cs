@@ -14,7 +14,12 @@ namespace messageboard
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["username"] == null || Session["userid"] == null)
+            {
+                Response.Write("<script>alert('请先登录！');window.location='Default.aspx';</script>");
+                Response.End();
+                return;
+            }
         }
             
 
