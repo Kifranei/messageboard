@@ -18,8 +18,26 @@ namespace messageboard
         }
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string strSql = "insert into gbook (title, name, time, contents, admin, reptime, repcontent, classid, userid) values ('" + TextBox2.Text + "','" + Session["username"].ToString() + "','" + DateTime.Now + "','" + TextBox1.Text + "','" + DateTime.Now + "','','" + Request.QueryString["cid"] + "','" + Session["userid"].ToString() + "')";
-            db1.ExecuteSql(strSql);
+            try
+            {
+                string strSql = "insert into gbook (title, name, time, contents, admin, reptime, repcontent, classid, userid) values ('"
+                    + TextBox2.Text + "','"
+                    + Session["username"].ToString() + "','"
+                    + DateTime.Now + "','"
+                    + TextBox1.Text + "','"
+                    + "" + "','" // admin
+                    + "" + "','" // reptime
+                    + "" + "','" // repcontent
+                    + Request.QueryString["cid"] + "','"
+                    + Session["userid"].ToString() + "')";
+                db1.ExecuteSql(strSql);
+            }
+            catch (Exception ex)
+            {
+                // 可根据需要将错误信息显示到页面或写入日志
+                Response.Write("<script>alert('留言失败：" + ex.Message + "');</script>");
+                return;
+            }
             Response.Redirect("Gbook.aspx?cid=" + Request.QueryString["cid"]);
         }
     }

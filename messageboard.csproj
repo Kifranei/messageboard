@@ -222,9 +222,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="file1.md" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
+    <Content Include="README.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
