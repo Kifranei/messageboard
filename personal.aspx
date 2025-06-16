@@ -80,7 +80,7 @@
             <span class="userinfo-label">留言数：</span><span class="userinfo-value"><asp:Label ID="Label9" runat="server" /></span>
         </div>
         <div class="userinfo-btns">
-            <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="modi.aspx" CssClass="aspNet-LinkButton">修改资料</asp:LinkButton>
+            <asp:LinkButton ID="LinkButton1" runat="server" CssClass="aspNet-LinkButton" OnClick="LinkButton1_Click">修改资料</asp:LinkButton>
             <a href="default.aspx">返回首页</a>
         </div>
     </div>

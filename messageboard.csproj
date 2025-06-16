@@ -96,7 +96,6 @@
     <Content Include="personal.aspx" />
     <Content Include="register.aspx" />
     <Content Include="seebook.aspx" />
-    <Content Include="userindex.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -221,13 +220,6 @@
       <DependentUpon>GbookList.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="userindex.aspx.cs">
-      <DependentUpon>userindex.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="userindex.aspx.designer.cs">
-      <DependentUpon>userindex.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

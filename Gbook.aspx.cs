@@ -20,27 +20,44 @@ namespace messageboard
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
+            // 校验必填项
+            if (string.IsNullOrWhiteSpace(TextBox1.Text) || string.IsNullOrWhiteSpace(TextBox2.Text))
+            {
+                Response.Write("<script>alert('标题和内容不能为空！');</script>");
+                return;
+            }
+            if (Session["username"] == null || Session["userid"] == null)
+            {
+                Response.Write("<script>alert('请先登录后再留言！');window.location='login.aspx';</script>");
+                return;
+            }
+            // 获取分组id
+            string classid = DropDownListClass.SelectedValue;
+            if (string.IsNullOrEmpty(classid) || !int.TryParse(classid, out _))
+            {
+                Response.Write("<script>alert('请选择留言分组！');</script>");
+                return;
+            }
             try
             {
                 string strSql = "insert into gbook (title, name, time, contents, admin, reptime, repcontent, classid, userid) values ('"
-                    + TextBox2.Text + "','"
-                    + Session["username"].ToString() + "','"
+                    + TextBox1.Text.Replace("'", "''") + "','"
+                    + Session["username"].ToString().Replace("'", "''") + "','"
                     + DateTime.Now + "','"
-                    + TextBox1.Text + "','"
+                    + TextBox2.Text.Replace("'", "''") + "','"
                     + "" + "','" // admin
                     + "" + "','" // reptime
                     + "" + "','" // repcontent
-                    + Request.QueryString["cid"] + "','"
+                    + classid + "','"
                     + Session["userid"].ToString() + "')";
                 db1.ExecuteSql(strSql);
             }
             catch (Exception ex)
             {
-                // 可根据需要将错误信息显示到页面或写入日志
                 Response.Write("<script>alert('留言失败：" + ex.Message + "');</script>");
                 return;
             }
-            Response.Redirect("Gbook.aspx?cid=" + Request.QueryString["cid"]);
+            Response.Redirect("Gbook.aspx?cid=" + classid);
         }
     }
 }

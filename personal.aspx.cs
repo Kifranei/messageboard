@@ -38,5 +38,16 @@ namespace messageboard
                 }
             }
         }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            string uid = Request.QueryString["uid"] ?? Session["userid"]?.ToString();
+            if (string.IsNullOrEmpty(uid))
+            {
+                Response.Redirect("login.aspx");
+                return;
+            }
+            Response.Redirect("modi.aspx?uid=" + uid);
+        }
     }
 }

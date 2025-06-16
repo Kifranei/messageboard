@@ -76,6 +76,13 @@
                 <asp:TextBox ID="TextBox2" runat="server" TextMode="MultiLine" Height="120px"></asp:TextBox>
             </span>
         </div>
+        <div class="gbook-row">
+            <span class="gbook-label">分组：</span>
+            <span class="gbook-value">
+                <asp:DropDownList ID="DropDownListClass" runat="server" DataSourceID="SqlDataSourceClass" DataTextField="classname" DataValueField="id"></asp:DropDownList>
+                <asp:SqlDataSource ID="SqlDataSourceClass" runat="server" ConnectionString="<%$ ConnectionStrings:guestbookConnectionString %>" SelectCommand="SELECT id, classname FROM gbook_class"></asp:SqlDataSource>
+            </span>
+        </div>
         <div class="gbook-btns">
             <asp:Button ID="Button1" runat="server" Text="留言" CssClass="aspNet-Button" OnClick="Button1_Click1" />
         </div>

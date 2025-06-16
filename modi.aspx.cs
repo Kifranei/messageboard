@@ -17,8 +17,20 @@ namespace messageboard
             if (!IsPostBack)
             {
                 string uid = Request.QueryString["uid"];
+                if (string.IsNullOrEmpty(uid) || !int.TryParse(uid, out _))
+                {
+                    Response.Write("<script>alert('参数错误，无法获取用户ID');window.location='login.aspx';</script>");
+                    Response.End();
+                    return;
+                }
                 string strsql = "select * from register where id=" + uid;
                 DataTable dt = db1.GetRecords(strsql);
+                if (dt.Rows.Count == 0)
+                {
+                    Response.Write("<script>alert('未找到该用户');window.location='login.aspx';</script>");
+                    Response.End();
+                    return;
+                }
                 Label4.Text = dt.Rows[0]["username"].ToString();
                 TextBox1.Text = dt.Rows[0]["password"].ToString();
                 DropDownList1.SelectedItem.Text = dt.Rows[0]["sex"].ToString();
