@@ -55,8 +55,8 @@
                 <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="id" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:CommandField ShowEditButton="True" />
-                        <asp:CommandField ShowDeleteButton="True" />
+                        <asp:CommandField ShowEditButton="True" HeaderText="编辑" />
+                        <asp:CommandField ShowDeleteButton="True" HeaderText="删除" />
                         <asp:BoundField DataField="id" HeaderText="编号" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                         <asp:BoundField DataField="username" HeaderText="用户名" SortExpression="username" />
                         <asp:BoundField DataField="password" HeaderText="密码" SortExpression="password" />

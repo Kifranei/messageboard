@@ -16,10 +16,20 @@ namespace messageboard.admin
 
         protected void Button3_Click(object sender, EventArgs e)
         {
+            if (Session["admin"] == null)
+            {
+                Response.Write("<script>alert('请先登录管理员账号');window.location='login.aspx';</script>");
+                return;
+            }
+            if (Request.QueryString["id"] == null)
+            {
+                Response.Write("<script>alert('参数错误，缺少留言ID');window.location='Gbook.aspx';</script>");
+                return;
+            }
             DBClass db1 = new DBClass();
-            string strsql = "update gbook set repcontent='" + TextBox3.Text + "',reptime='" + DateTime.Now + "',admin = '"+ Session["admin"].ToString()+"'where id = ' " +Request.QueryString["id"] +"'";
+            string strsql = "update gbook set repcontent='" + TextBox3.Text.Replace("'", "''") + "',reptime='" + DateTime.Now + "',admin='" + Session["admin"].ToString() + "' where id=" + Request.QueryString["id"];
             db1.ExecuteSql(strsql);
-            Response.Redirect("Gbook.aspx?cid=" + Request.QueryString["cid"] + "");
+            Response.Redirect("Gbook.aspx");
         }
     }
 }

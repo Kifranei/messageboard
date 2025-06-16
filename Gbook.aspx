@@ -77,7 +77,7 @@
             </span>
         </div>
         <div class="gbook-btns">
-            <asp:Button ID="Button1" runat="server" Text="留言" CssClass="aspNet-Button" />
+            <asp:Button ID="Button1" runat="server" Text="留言" CssClass="aspNet-Button" OnClick="Button1_Click1" />
         </div>
     </div>
 </asp:Content>

@@ -20,7 +20,8 @@ namespace messageboard
             else
             {
                 Label1.Text = $"你好 <a href='personal.aspx?uid={Request.QueryString["id"]}'>{Session["username"]}</a>";
-                Label2.Text = $"<a href='userindex.aspx?uid={Session["userid"]}&name={Session["username"]}'>查看留言</a>";
+                //Label2.Text = $"<a href='userindex.aspx?uid={Session["userid"]}&name={Session["username"]}'>查看留言</a>";
+                Label2.Text = $"<a href='seebook.aspx?uid={Session["userid"]}'>查看留言</a>";
                 Label3.Text = $"<a href='logout.aspx'>注销</a>";
             }
         }

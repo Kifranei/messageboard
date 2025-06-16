@@ -1,15 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="messageboard.Default" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="messageboard.Default" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title>选择留言板</title>
-<link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
-</head>
-<body style="background:white url(images/bg.png) repeat-x;">
-    <form id="form1" runat="server">
+    <link href="css/StyleSheet.css" rel="stylesheet" type="text/css" />
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div style="text-align:center;margin-bottom:20px;">
         <asp:Label ID="Label1" runat="server" />
         <asp:Label ID="Label2" runat="server" style="margin-left:20px;" />
@@ -26,6 +20,4 @@
             ConnectionString="<%$ ConnectionStrings:guestbookConnectionString %>" 
             SelectCommand="SELECT * FROM [gbook_class]"></asp:SqlDataSource>
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>

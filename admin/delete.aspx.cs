@@ -12,9 +12,9 @@ namespace messageboard.admin
         protected void Page_Load(object sender, EventArgs e)
         {
             DBClass db1 = new DBClass();
-            string strsql = "delete from gbook where id='" + Request.QueryString["id"] + "'";
+            string strsql = "delete from gbook where id=" + Request.QueryString["id"];
             db1.ExecuteSql(strsql);
-            Response.Redirect("../Gbook.aspx?cid=" + Request.QueryString["cid"] + "");
+            Response.Redirect("Gbook.aspx");
         }
     }
 }
