@@ -1,5 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="messageboard.admin.login" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="messageboard.admin.login" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>管理员登录</title>
 <style type="text/css">
     .admin-login-box {
         width: 400px;
@@ -64,24 +68,27 @@
         font-size: 13px;
     }
 </style>
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="admin-login-box">
-        <div class="admin-login-title">管理员登录</div>
-        <div class="admin-login-row">
-            <span class="admin-login-label">用户名：</span>
-            <span class="admin-login-value">
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
-            </span>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="admin-login-box">
+            <div class="admin-login-title">管理员登录</div>
+            <div class="admin-login-row">
+                <span class="admin-login-label">用户名：</span>
+                <span class="admin-login-value">
+                    <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                </span>
+            </div>
+            <div class="admin-login-row">
+                <span class="admin-login-label">密码：</span>
+                <span class="admin-login-value">
+                    <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
+                </span>
+            </div>
+            <div class="admin-login-btns">
+                <asp:Button ID="Button1" runat="server" Text="登录" CssClass="aspNet-Button" OnClick="Button1_Click" />
+            </div>
         </div>
-        <div class="admin-login-row">
-            <span class="admin-login-label">密码：</span>
-            <span class="admin-login-value">
-                <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
-            </span>
-        </div>
-        <div class="admin-login-btns">
-            <asp:Button ID="Button1" runat="server" Text="登录" CssClass="aspNet-Button" OnClick="Button1_Click" />
-        </div>
-    </div>
-</asp:Content>
+    </form>
+</body>
+</html>
