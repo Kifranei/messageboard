@@ -76,6 +76,11 @@
     <Content Include="Control\GbookList.ascx" />
     <Content Include="css\StyleSheet.css" />
     <Content Include="css\StyleSheet1.css" />
+    <Content Include="DatabaseFiles\guestbook.mdf" />
+    <Content Include="DatabaseFiles\guestbook_log.ldf">
+      <DependentUpon>guestbook.mdf</DependentUpon>
+    </Content>
+    <Content Include="DatabaseFiles\SQL.sql" />
     <Content Include="Default.aspx" />
     <Content Include="Gbook.aspx" />
     <Content Include="images\bg.png" />
@@ -217,6 +222,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="file1.md" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
