@@ -70,6 +70,7 @@
     <Content Include="admin\delete.aspx" />
     <Content Include="admin\GbookList.ascx" />
     <Content Include="admin\login.aspx" />
+    <Content Include="admin\main.aspx" />
     <Content Include="admin\reply.aspx" />
     <Content Include="admin\usermanage.aspx" />
     <Content Include="Control\GbookList.ascx" />
@@ -113,6 +114,13 @@
     </Compile>
     <Compile Include="admin\login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\reply.aspx.cs">
       <DependentUpon>reply.aspx</DependentUpon>

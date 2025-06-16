@@ -37,33 +37,33 @@
             <div class="admin-title">用户管理</div>
             <div class="admin-table">
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:guestbookConnectionString %>" SelectCommand="SELECT * FROM [register]"
-    UpdateCommand="UPDATE [register] SET [username]=@username, [password]=@password, [sex]=@sex, [QQ]=@QQ, [information]=@information, [others]=@others WHERE [id]=@id"
-    DeleteCommand="DELETE FROM [register] WHERE [id]=@id">
-    <UpdateParameters>
-        <asp:Parameter Name="username" Type="String" />
-        <asp:Parameter Name="password" Type="String" />
-        <asp:Parameter Name="sex" Type="String" />
-        <asp:Parameter Name="QQ" Type="String" />
-        <asp:Parameter Name="information" Type="String" />
-        <asp:Parameter Name="others" Type="String" />
-        <asp:Parameter Name="id" Type="Int32" />
-    </UpdateParameters>
-    <DeleteParameters>
-        <asp:Parameter Name="id" Type="Int32" />
-    </DeleteParameters>
-</asp:SqlDataSource>
+                    UpdateCommand="UPDATE [register] SET [username]=@username, [password]=@password, [sex]=@sex, [QQ]=@QQ, [information]=@information, [others]=@others WHERE [id]=@id"
+                    DeleteCommand="DELETE FROM [register] WHERE [id]=@id">
+                    <UpdateParameters>
+                        <asp:Parameter Name="username" Type="String" />
+                        <asp:Parameter Name="password" Type="String" />
+                        <asp:Parameter Name="sex" Type="String" />
+                        <asp:Parameter Name="QQ" Type="String" />
+                        <asp:Parameter Name="information" Type="String" />
+                        <asp:Parameter Name="others" Type="String" />
+                        <asp:Parameter Name="id" Type="Int32" />
+                    </UpdateParameters>
+                    <DeleteParameters>
+                        <asp:Parameter Name="id" Type="Int32" />
+                    </DeleteParameters>
+                </asp:SqlDataSource>
                 <asp:GridView ID="GridView1" runat="server" DataSourceID="SqlDataSource1" AutoGenerateColumns="False" DataKeyNames="id" CellPadding="4" ForeColor="#333333" GridLines="None">
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
                         <asp:CommandField ShowEditButton="True" />
                         <asp:CommandField ShowDeleteButton="True" />
-                        <asp:BoundField DataField="id" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="id" />
+                        <asp:BoundField DataField="id" HeaderText="编号" InsertVisible="False" ReadOnly="True" SortExpression="id" />
                         <asp:BoundField DataField="username" HeaderText="用户名" SortExpression="username" />
                         <asp:BoundField DataField="password" HeaderText="密码" SortExpression="password" />
                         <asp:BoundField DataField="sex" HeaderText="性别" SortExpression="sex" />
                         <asp:BoundField DataField="QQ" HeaderText="QQ" SortExpression="QQ" />
-                        <asp:BoundField DataField="information" SortExpression="information" />
-                        <asp:BoundField DataField="others" HeaderText="others" SortExpression="others" />
+                        <asp:BoundField DataField="information" HeaderText="签名" SortExpression="information" />
+                        <asp:BoundField DataField="others" HeaderText="备注" SortExpression="others" />
                     </Columns>
                     <EditRowStyle BackColor="#2461BF" />
                     <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
