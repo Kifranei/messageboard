@@ -24,7 +24,7 @@ namespace messageboard.admin
             if (dt != null && dt.Rows.Count == 1)
             {
                 Session["admin"] = TextBox1.Text;
-                Response.Redirect("../Gbook.aspx");
+                Response.Redirect("main.aspx");
             }
             else
             {
