@@ -62,7 +62,6 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <uc1:GbookList ID="GbookList1" runat="server" />
     <div class="gbook-box">
         <div class="gbook-title">留言</div>
         <div class="gbook-row">

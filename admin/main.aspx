@@ -42,6 +42,7 @@
             <div class="admin-main-title">后台管理中心</div>
             <div class="admin-main-btns">
                 <a href="usermanage.aspx">用户管理</a>
+                <a href="Gbook.aspx">留言管理</a>
             </div>
             <div style="margin:30px 0;">
             </div>

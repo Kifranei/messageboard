@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\delete.aspx" />
+    <Content Include="admin\Gbook.aspx" />
     <Content Include="admin\GbookList.ascx" />
     <Content Include="admin\login.aspx" />
     <Content Include="admin\main.aspx" />
@@ -105,6 +106,13 @@
     </Compile>
     <Compile Include="admin\delete.aspx.designer.cs">
       <DependentUpon>delete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Gbook.aspx.cs">
+      <DependentUpon>Gbook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Gbook.aspx.designer.cs">
+      <DependentUpon>Gbook.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\GbookList.ascx.cs">
       <DependentUpon>GbookList.ascx</DependentUpon>
