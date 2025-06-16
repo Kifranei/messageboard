@@ -49,6 +49,15 @@ namespace messageboard
                 strSql = "select gbook.* from gbook, register where register.id = gbook.userid order by gbook.id desc";
             }
             DataTable dt = db1.GetRecords(strSql);
+            // 如果没有传uid参数，则隐藏所有管理员回复内容
+            string uid = Request.QueryString["uid"];
+            if (string.IsNullOrEmpty(uid))
+            {
+                foreach (DataRow row in dt.Rows)
+                {
+                    row["repcontent"] = "";
+                }
+            }
             int curpage = Convert.ToInt32(this.Label3.Text);
             PagedDataSource pds = new PagedDataSource(); //使用分页类
             pds.DataSource = dt.DefaultView;
