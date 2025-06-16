@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="messageboard.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="StyleSheet1.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="main">
+            <div id="top"><img src="images/top.png"  /></div>
+           <div class="gbook_banner" style="text-align:center;line-height:40px;">
+                <span style="display:inline-block;vertical-align:middle;">
+                    <img alt="" src="images/groups.png" style="width: 16px; height: 16px" /> 
+                    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>&nbsp;
+                    <img alt="" src="images/gift.png" style="width: 16px; height: 16px" /> 
+                    <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>&nbsp;
+                    <img alt="" src="images/logout.png" style="width: 16px; height: 16px" /> 
+                    <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>&nbsp;
+                </span>
+                <asp:ContentPlaceHolder ID="PagerPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+            </div> 
+            <div id="center">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+            </div>
+            <div id="footer">
+                
+                <div id="footertext">
+                    <p> XXX 版权所有</p>
+
+<p>联系地址：黑龙江XXX市XXX区XXX路XXX号</p>
+<p>联系电话：0000-8888888 ICP备案号：0000000</p>
+
+<p>站点访问量：999999</p>
+
+                </div>
+            </div>       
+        </div>
+    </form>
+</body>
+</html>
