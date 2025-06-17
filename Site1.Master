@@ -13,7 +13,7 @@
 <body>
     <form id="form1" runat="server">
         <div id="main">
-            <div id="top"><img src="images/top.png"  /></div>
+            <div id="top" style="text-align:center;"><img src="images/top.png"  /></div>
            <div class="gbook_banner" style="text-align:center;line-height:40px;">
                 <span style="display:inline-block;vertical-align:middle;">
                     <img alt="" src="images/groups.png" style="width: 16px; height: 16px" /> 
@@ -31,15 +31,11 @@
 
             </div>
             <div id="footer">
-                
-                <div id="footertext">
+                <div id="footertext" style="text-align:center;">
                     <p> XXX 版权所有</p>
-
-<p>联系地址：黑龙江XXX市XXX区XXX路XXX号</p>
-<p>联系电话：0000-8888888 ICP备案号：0000000</p>
-
-<p>站点访问量：999999</p>
-
+                    <p>联系地址：黑龙江XXX市XXX区XXX路XXX号</p>
+                    <p>联系电话：0000-8888888 ICP备案号：0000000</p>
+                    <p>站点访问量：999999</p>
                 </div>
             </div>       
         </div>
