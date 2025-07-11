@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="modi.aspx.cs" Inherits="messageboard.modi" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <style type="text/css">
         .userinfo-box {
             width: 420px;
@@ -56,6 +58,22 @@
         }
         .userinfo-btns input[type=submit]:hover, .userinfo-btns input[type=button]:hover, .userinfo-btns button:hover, .userinfo-btns .aspNet-Button:hover {
             background: #388e3c;
+        }
+        @media (max-width: 600px) {
+            .userinfo-box {
+                width: 100% !important;
+                padding: 10px !important;
+                margin: 10px 0 !important;
+                box-sizing: border-box;
+            }
+            .userinfo-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .userinfo-label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
         }
         .aspNet-Validator {
             color: #e53935;

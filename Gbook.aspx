@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Gbook.aspx.cs" Inherits="messageboard.Gbook" %>
 <%@ Register src="Control/GbookList.ascx" tagname="GbookList" tagprefix="uc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <style type="text/css">
         .gbook-box {
             width: 600px;
@@ -58,6 +60,24 @@
         }
         .gbook-btns input[type=submit]:hover, .gbook-btns input[type=button]:hover, .gbook-btns button:hover, .gbook-btns .aspNet-Button:hover {
             background: #388e3c;
+        }
+        @media (max-width: 700px) {
+            .gbook-box {
+                width: 100% !important;
+                padding: 10px !important;
+                margin: 10px 0 !important;
+                box-sizing: border-box;
+            }
+            .gbook-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .gbook-label {
+                width: 100%;
+                margin-top: 0;
+                margin-bottom: 5px;
+            }
+        }
         }
     </style>
 </asp:Content>
